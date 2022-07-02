@@ -1,4 +1,4 @@
-import { GetStaticPropsContext, GetStaticProps, GetStaticPaths} from 'next';
+import { GetStaticPropsContext, GetStaticProps, GetStaticPaths, GetServerSideProps, GetServerSidePropsContext} from 'next';
 import React from 'react'
 import {useRouter} from 'next/router'
 type ProductsProps = {
@@ -12,7 +12,7 @@ const ProductDetail = ({products}: ProductsProps) => {
   )
 }  
  export const getStaticPaths:GetStaticPaths  = async () => {
-    const data = await (await fetch(`https://6110f09bc38a0900171f0ed0.mockapi.io/products`)).json();
+    const data = await (await fetch(`https://62bfe33ac134cf51cec5844c.mockapi.io/products`)).json();
     const paths = data.map(products => (
         {params: {id: products.id}}
     ))
@@ -21,12 +21,24 @@ const ProductDetail = ({products}: ProductsProps) => {
         fallback: false
       }
  }
+// export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
+//   console.log('context', context);getServerSideProps
+//   context.res.setHeader("Cache-Control", "s-maxage=10, stale-while-revalidate")
+//   const products = await (await fetch(`https://62bfe33ac134cf51cec5844c.mockapi.io/products/${context.params?.id}`)).json();
+//   return {
+//     props: { products }
+//   }
+// }
+
 
 export const  getStaticProps:GetStaticProps<ProductsProps> = async (context : GetStaticPropsContext ) => { 
-    const products = await (await fetch(`https://6110f09bc38a0900171f0ed0.mockapi.io/products/${context.params?.id}`)).json();
+    const products = await (await fetch(`https://62bfe33ac134cf51cec5844c.mockapi.io/products/${context.params?.id}`)).json();
 
     return  {
-        props: {products}
+        props: {products}, 
+        revalidate: 10
+
     }
+    
 }
 export default ProductDetail
