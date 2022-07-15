@@ -55,7 +55,7 @@ const Home: NextPage = () => {
     
             <div className="group relative">
               <div className="relative w-full h-80 bg-white rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-                <img src="https://bizweb.dktcdn.net/thumb/large/100/039/880/themes/751871/assets/gift.png?1646821092404"/>
+              <img src="https://bizweb.dktcdn.net/thumb/large/100/039/880/themes/751871/assets/gift.png?1652080686681" alt="Collection of four insulated travel bottles on wooden shelf." className="w-full h-full object-center object-cover"/>
               </div>
               <h3 className="mt-6 text-sm text-gray-500">
                 <a href="#">
