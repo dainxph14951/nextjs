@@ -21,7 +21,9 @@ const Product = () => {
         if(error) return <div>Failed to load</div>
   return (
     <div>{data.map((item : any) => (
-        <div key={item.id}><Link href={`/product/${item.id}`}>{item.name}</Link></div>
+        <div key={item.id}>
+          <Link href={`/product/${item.id}`}>{item.name}</Link>
+          </div>
     ))}
     
     <button onClick={() => create({ name: "Product G" })}>Add Product</button>

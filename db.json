@@ -2,23 +2,11 @@
   "products": [
     {
       "id": 1,
-      "name": "Products A"
-    },
-    {
-      "id": 1,
-      "name": "Products B"
-    },
-    {
-      "name": "Product G",
-      "id": 2
-    },
-    {
-      "name": "Product G",
-      "id": 3
-    },
-    {
-      "name": "Product G",
-      "id": 4
+      "name": "Products A",
+      "img": "abc.jbg",
+      "price": "500",
+      "quantity": "20",
+      "desc": "20"
     }
   ]
 }
