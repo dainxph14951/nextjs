@@ -20,7 +20,7 @@ const Add = () => {
 <div>
 <div className=''>
     <div className='flex justify-between mb-[20px]'>
-        <h1 className='text-[30px]'>Add</h1>
+        <h1 className='text-[30px]'>Edit</h1>
     </div>
     <form className="justify-center w-full mx-auto" method="post" onSubmit={handleSubmit(onSubmit)}>
         <div className="">
